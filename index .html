@@ -42,20 +42,17 @@
 
       <div class="codewrap">
         <pre id="code"><code>
-from machine import Pin, I2C
+import pygame
+import random
 
-# Initialize I2C on GP1 (SCL) and GP0 (SDA)
-i2c = I2C(0, scl=Pin(1), sda=Pin(0))
+pygame.init()
+screen = pygame.display.set_mode((600, 400))
+pygame.display.set_caption("My First Game")
+# Set up colors
+WHITE = (255, 255, 255)
+# Set up fonts
+font = pygame.font.SysFont('Arial', 30)
 
-# Scan for I2C devices and print their addresses in hexadecimal
-devices = i2c.scan()
-
-if devices:
-    print("I2C device(s) found:")
-    for device in devices:
-        print("Address in HEX: {}".format(hex(device)))
-else:
-    print("No I2C devices found")
 </code></pre>
       </div>
     </div>
